@@ -1,6 +1,6 @@
 # Disqus SSO
 
-A simple Laravel packages used to generate payload for the Disqus SSO feature.
+A simple Laravel packages used to generate payload for the [Disqus SSO](https://help.disqus.com/customer/portal/articles/236206-integrating-single-sign-on) feature.
 
 ## Installation
 
