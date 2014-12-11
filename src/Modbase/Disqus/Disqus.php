@@ -28,8 +28,8 @@ class Disqus {
      */
     public function __construct()
     {
-        $this->privateKey = Config::get('disqus-sso::keys.private');
-        $this->publicKey = Config::get('disqus-sso::keys.public');
+        $this->privateKey = Config::get('disqus-sso::key.private');
+        $this->publicKey = Config::get('disqus-sso::key.public');
     }
 
 
