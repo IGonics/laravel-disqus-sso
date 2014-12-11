@@ -1,0 +1,22 @@
+{
+    "name": "modbase/disqus-sso",
+    "description": "Generates payload to use with Disqus SSO",
+    "keywords": ["disqus", "sso", "laravel"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Stijn Geselle",
+            "email": "stijn.geselle@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Modbase\\Disqus\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
