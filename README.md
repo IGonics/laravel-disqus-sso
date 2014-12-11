@@ -26,7 +26,7 @@ Open `config/packages/modbase/disqus-sso/key.php` and fill in your Disqus _secre
 
 ## Usage
 
-Using this package is very easy. Add the following code *before* the Disqus initialisation:
+Using this package is very easy. Add the following code **before** the Disqus initialisation:
 
 ```JavaScript
 var disqus_config = function () {
