@@ -39,5 +39,5 @@ var disqus_config = function () {
 Note that I'm using the Blade syntax here, which is not required of course.
 
 The payload function accepts two different types of input:  
-a) An array with the `id`, `username`, `email`, `avatar` and `url` of the user you're trying to authenticate. See the [Disqus help](https://help.disqus.com/customer/portal/articles/236206-single-sign-on#user-data) for more information about these.
+a) An array with the `id`, `username`, `email`, `avatar` and `url` of the user you're trying to authenticate. See the [Disqus help](https://help.disqus.com/customer/portal/articles/236206-single-sign-on#user-data) for more information about these.  
 b) A laravel Model instance, for example `Auth::user()` as shown in the example.
