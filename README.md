@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/modbase/disqus-sso.svg)](https://travis-ci.org/modbase/disqus-sso)
+
 # Disqus SSO
 
 A simple Laravel packages used to generate payload for the Disqus SSO feature.
