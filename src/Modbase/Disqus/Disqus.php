@@ -43,14 +43,14 @@ class Disqus {
      */
     public function payload($userData)
     {
-        // Only grab the id, username and email
-        // TODO: check avatar and other!!
         if ( ! is_array($userData) )
         {
             $userData = $userData->toArray();
         }
 
-        $userData = array_only($userData, ['id', 'username', 'email']);
+        // Only these are supported by Disqus
+        // See: https://help.disqus.com/customer/portal/articles/236206-single-sign-on#user-data
+        $userData = array_only($userData, ['id', 'username', 'email', 'avatar', 'url']);
 
         $timestamp = time();
         $encodedData = $this->getEncodedData($userData);
