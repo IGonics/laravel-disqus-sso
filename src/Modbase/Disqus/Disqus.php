@@ -45,7 +45,7 @@ class Disqus {
     {
         // Only grab the id, username and email
         // TODO: check avatar and other!!
-        if ( ! is_array($userData) && $userData instanceof \User )
+        if ( ! is_array($userData) )
         {
             $userData = $userData->toArray();
         }
