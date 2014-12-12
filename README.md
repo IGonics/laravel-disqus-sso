@@ -43,7 +43,3 @@ a) An array with the `id`, `username` and `email` of the user you're trying to a
 b) A User model instance, for example `Auth::user()` as shown in the example.
 
 You can use whatever you like.
-
-## TODO
-
-- Extend the user data with avatar etc.
