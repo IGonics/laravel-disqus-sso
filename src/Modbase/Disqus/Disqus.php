@@ -26,10 +26,10 @@ class Disqus {
     /**
      * Creates a new Disqus instance                      
      */
-    public function __construct()
+    public function __construct($privateKey = null, $publicKey = null)
     {
-        $this->privateKey = Config::get('disqus-sso::key.private');
-        $this->publicKey = Config::get('disqus-sso::key.public');
+        $this->privateKey = $privateKey ?: Config::get('disqus-sso::key.private');
+        $this->publicKey = $publicKey?: Config::get('disqus-sso::key.public');
     }
 
 
@@ -77,7 +77,7 @@ class Disqus {
      * @param  string $userData The data to encode
      * @return string
      */
-    private function getEncodedData(array $userData)
+    public function getEncodedData(array $userData)
     {
         return base64_encode(json_encode($userData));
     }
@@ -90,7 +90,7 @@ class Disqus {
      * @param  integer $timestamp Unix timestamp
      * @return string
      */
-    protected function getHMAC($encodedData, $timestamp)
+    public function getHMAC($encodedData, $timestamp)
     {
         $message = $encodedData . ' ' . $timestamp;
         
