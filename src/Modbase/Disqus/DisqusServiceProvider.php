@@ -18,7 +18,7 @@ class DisqusServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->package('modbase/disqus-sso');
+		
 	}
 
 	/**
@@ -42,7 +42,7 @@ class DisqusServiceProvider extends ServiceProvider {
 	 */
 	public function provides()
 	{
-		return array('disqus-sso');
+		return ['disqus-sso'];
 	}
 
 }
