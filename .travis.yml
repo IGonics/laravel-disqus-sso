@@ -20,11 +20,9 @@ matrix:
 
 sudo: false
 
-before_script:
-  - phpenv config-rm xdebug.ini
-
 before_install:
   - travis_retry composer self-update
+  - phpenv config-rm xdebug.ini
 
 install:
   - if [[ $setup = 'basic' ]]; then travis_retry composer install --no-interaction --prefer-dist; fi
