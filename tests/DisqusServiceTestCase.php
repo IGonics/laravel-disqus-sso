@@ -64,8 +64,8 @@ class DisqusServiceTestCase extends Orchestra\Testbench\TestCase {
      */
     protected function getEnvironmentSetUp($app)
     {
-        $app['config']->set('disqus-sso::key.private', $this->testPrivateKey);
-        $app['config']->set('disqus-sso::key.public', $this->testPublicKey);
+        $app['config']->set('disqus-sso.key.private', $this->testPrivateKey);
+        $app['config']->set('disqus-sso.key.public', $this->testPublicKey);
     }
 
     protected function getPackageProviders($app)
