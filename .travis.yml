@@ -17,12 +17,14 @@ matrix:
       env: setup=lowest
     - php: 5.5.9
       env: setup=stable
+    - php: hhvm
+      env: HHVM_IS_INSTALLED=1
 
 sudo: false
 
 before_install:
   - travis_retry composer self-update
-  - phpenv config-rm xdebug.ini
+  - if [[ $HHVM_IS_INSTALLED != 1 ]]; then phpenv config-rm xdebug.ini; fi
 
 install:
   - if [[ $setup = 'basic' ]]; then travis_retry composer install --no-interaction --prefer-dist; fi
