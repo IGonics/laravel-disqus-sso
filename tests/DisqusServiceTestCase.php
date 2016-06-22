@@ -2,19 +2,19 @@
 
 use Modbase\Disqus\DisqusServiceProvider;
 
-class DisqusServiceTestCase extends Orchestra\Testbench\TestCase {
-	
-	protected $service = null;
+class DisqusServiceTestCase extends Orchestra\Testbench\TestCase
+{
+    protected $service = null;
 
-	protected $testUserData = [
-	    'id'       => 1, 
-	    'username' => 'testuser', 
-	    'email'    => 'testuser@test.com', 
-	    'avatar'   => 'http://test.com/test-avatar-url', 
-	    'url'      => 'http://test.com/'
-	];
+    protected $testUserData = [
+        'id'       => 1,
+        'username' => 'testuser',
+        'email'    => 'testuser@test.com',
+        'avatar'   => 'http://test.com/test-avatar-url',
+        'url'      => 'http://test.com/',
+    ];
 
-	protected $testPrivateKey = 'testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttest';
+    protected $testPrivateKey = 'testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttest';
     protected $testPublicKey = 'tsettsettsettsettsettsettsettsettsettsettsettsettsettsettsettset';
 
     public function setUp()
@@ -29,17 +29,18 @@ class DisqusServiceTestCase extends Orchestra\Testbench\TestCase {
         $this->assertNotNull($this->service);
     }
 
-    public function testPayload(){
+    public function testPayload()
+    {
         $timestamp = time();
         $encodedData = $this->service->getEncodedData($this->testUserData);
-        $expected = $encodedData . ' ' . $this->service->getHMAC($encodedData, $timestamp) . ' ' . $timestamp;
+        $expected = $encodedData.' '.$this->service->getHMAC($encodedData, $timestamp).' '.$timestamp;
 
         $this->assertTrue($expected == $this->service->payload($this->testUserData));
     }
 
     public function testPublicKey()
     {
-    	$this->assertTrue($this->service->publicKey() === $this->testPublicKey);
+        $this->assertTrue($this->service->publicKey() === $this->testPublicKey);
     }
 
     public function testGetEncodedData()
@@ -50,9 +51,9 @@ class DisqusServiceTestCase extends Orchestra\Testbench\TestCase {
 
     public function testGetHMAC()
     {
-    	$timestamp = time();
-    	$encodedData = $this->service->getEncodedData($this->testUserData);
-        $message = $encodedData . ' ' . $timestamp;
+        $timestamp = time();
+        $encodedData = $this->service->getEncodedData($this->testUserData);
+        $message = $encodedData.' '.$timestamp;
         $expected = hash_hmac('sha1', $message, $this->testPrivateKey);
         $this->assertTrue($expected == $this->service->getHMAC($encodedData, $timestamp));
     }
