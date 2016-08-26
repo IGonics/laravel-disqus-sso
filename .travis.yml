@@ -9,6 +9,7 @@ php:
 env:
   global:
     - setup=basic
+    - travis_wait_time_in_mins=30
 
 matrix:
   include:
@@ -22,12 +23,12 @@ matrix:
 sudo: false
 
 before_install:
-  - travis_retry composer self-update
+  - travis_wait $travis_wait_time_in_mins composer self-update
   - if [[ $HHVM_IS_INSTALLED != 1 ]]; then phpenv config-rm xdebug.ini; fi
 
 install:
-  - if [[ $setup = 'basic' ]]; then travis_retry composer install --no-interaction --prefer-dist; fi
-  - if [[ $setup = 'stable' ]]; then travis_retry composer update --prefer-dist --no-interaction --prefer-stable; fi
-  - if [[ $setup = 'lowest' ]]; then travis_retry composer update --prefer-dist --no-interaction --prefer-lowest --prefer-stable; fi
+  - if [[ $setup = 'basic' ]]; then travis_wait $travis_wait_time_in_mins composer install --no-interaction --prefer-dist; fi
+  - if [[ $setup = 'stable' ]]; then travis_wait $travis_wait_time_in_mins composer update --prefer-dist --no-interaction --prefer-stable; fi
+  - if [[ $setup = 'lowest' ]]; then travis_wait $travis_wait_time_in_mins composer update --prefer-dist --no-interaction --prefer-lowest --prefer-stable; fi
 
 script: phpunit
