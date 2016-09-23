@@ -7,11 +7,18 @@
         {
             "name": "Stijn Geselle",
             "email": "stijn.geselle@gmail.com"
+        },
+        {
+            "name": "ggordon",
+            "email": "ggordon@igonics.com"
         }
     ],
     "require": {
         "php": ">=5.4.0",
-        "illuminate/support": "5.2.*"
+        "illuminate/support": "5.2.*|5.3.*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "~3.0"
     },
     "autoload": {
         "psr-0": {

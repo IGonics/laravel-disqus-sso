@@ -1,48 +1,50 @@
-<?php namespace Modbase\Disqus;
+<?php
+
+namespace Modbase\Disqus;
 
 use Illuminate\Support\ServiceProvider;
 
-class DisqusServiceProvider extends ServiceProvider {
+class DisqusServiceProvider extends ServiceProvider
+{
+    /**
+     * Indicates if loading of the provider is deferred.
+     *
+     * @var bool
+     */
+    protected $defer = false;
 
-	/**
-	 * Indicates if loading of the provider is deferred.
-	 *
-	 * @var bool
-	 */
-	protected $defer = false;
+    /**
+     * Bootstrap the application events.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        $this->publishes([
+            __DIR__.'/../../config/disqus-sso.php' => config_path('disqus-sso.php'),
+        ], 'config');
+    }
 
-	/**
-	 * Bootstrap the application events.
-	 *
-	 * @return void
-	 */
-	public function boot()
-	{
-		$this->package('modbase/disqus-sso');
-	}
-
-	/**
-	 * Register the service provider.
-	 *
-	 * @return void
-	 */
-	public function register()
-	{
-		// Register 'disqus-sso' instance container to our DisqusAuth object
-        $this->app['disqus-sso'] = $this->app->share(function($app)
-        {
+    /**
+     * Register the service provider.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        // Register 'disqus-sso' instance container to our DisqusAuth object
+        $this->app['disqus-sso'] = $this->app->share(function ($app) {
             return new Disqus;
         });
-	}
+    }
 
-	/**
-	 * Get the services provided by the provider.
-	 *
-	 * @return array
-	 */
-	public function provides()
-	{
-		return array('disqus-sso');
-	}
-
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
+    public function provides()
+    {
+        return ['disqus-sso'];
+    }
 }

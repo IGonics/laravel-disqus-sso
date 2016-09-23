@@ -20,11 +20,11 @@ A simple Laravel packages used to generate payload for the Disqus SSO feature.
 
 - Publish the configuration file:
 
-`php artisan config:publish modbase/disqus-sso`
+`php artisan vendor:publish --provider="Modbase\Disqus\DisqusServiceProvider" --tag="config"`
 
 ## Configuration
 
-Open `config/packages/modbase/disqus-sso/key.php` and fill in your Disqus _secret_ and _public_ API keys. You can find those at your [Disqus applications](https://disqus.com/api/applications/) page.
+Open `config/disqus-sso.php` and fill in your Disqus _secret_ and _public_ API keys. You can find those at your [Disqus applications](https://disqus.com/api/applications/) page.
 
 ## Usage
 
@@ -44,6 +44,3 @@ The payload function accepts two different types of input:
 a) An array with the `id`, `username`, `email`, `avatar` and `url` of the user you're trying to authenticate. See the [Disqus help](https://help.disqus.com/customer/portal/articles/236206-single-sign-on#user-data) for more information about these.  
 b) A laravel Model instance, for example `Auth::user()` as shown in the example.
 
-## TODO
-
-- Add tests (whoops)
