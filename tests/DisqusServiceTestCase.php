@@ -1,6 +1,6 @@
 <?php
 
-use Modbase\Disqus\DisqusServiceProvider;
+use IGonics\Disqus\DisqusServiceProvider;
 
 class DisqusServiceTestCase extends Orchestra\Testbench\TestCase
 {
@@ -36,6 +36,11 @@ class DisqusServiceTestCase extends Orchestra\Testbench\TestCase
         $expected = $encodedData.' '.$this->service->getHMAC($encodedData, $timestamp).' '.$timestamp;
 
         $this->assertTrue($expected == $this->service->payload($this->testUserData));
+    }
+
+    public function testPayloadWithNullUser()
+    {
+        $this->assertTrue(''== $this->service->payload(null));
     }
 
     public function testPublicKey()
