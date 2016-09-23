@@ -1,6 +1,6 @@
 <?php
 
-namespace Modbase\Disqus;
+namespace IGonics\Disqus;
 
 use Illuminate\Support\ServiceProvider;
 

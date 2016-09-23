@@ -1,6 +1,6 @@
 <?php
 
-namespace Modbase\Disqus\Facades;
+namespace IGonics\Disqus\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

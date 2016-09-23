@@ -1,5 +1,5 @@
 {
-    "name": "modbase/disqus-sso",
+    "name": "igonics/disqus-sso",
     "description": "Generates payload to use with Disqus SSO",
     "keywords": ["disqus", "sso", "laravel"],
     "license": "MIT",
@@ -22,7 +22,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Modbase\\Disqus\\": "src/"
+            "IGonics\\Disqus\\": "src/"
         }
     },
     "minimum-stability": "stable"
