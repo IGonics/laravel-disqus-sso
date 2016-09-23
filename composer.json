@@ -1,7 +1,7 @@
 {
-    "name": "igonics/disqus-sso",
+    "name": "igonics/laravel-disqus-sso",
     "description": "Generates payload to use with Disqus SSO",
-    "keywords": ["disqus", "sso", "laravel"],
+    "keywords": ["disqus", "sso", "laravel","igonics"],
     "license": "MIT",
     "authors": [
         {
@@ -15,7 +15,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "illuminate/support": "5.2.*|5.3.*"
+        "illuminate/support": "5.1.*|5.2.*|5.3.*"
     },
     "require-dev": {
         "orchestra/testbench": "~3.0"
