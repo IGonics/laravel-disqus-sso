@@ -33,7 +33,7 @@ class DisqusServiceProvider extends ServiceProvider
     public function register()
     {
         // Register 'disqus-sso' instance container to our DisqusAuth object
-        $this->app['disqus-sso'] = $this->app->share(function ($app) {
+        $this->app->singleton('disqus-sso',function ($app) {
             return new Disqus;
         });
     }
