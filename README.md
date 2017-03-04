@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/gggordon/laravel-disqus-sso.svg)](https://travis-ci.org/gggordin/laravel-disqus-sso)
+[![Build Status](https://travis-ci.org/gggordon/laravel-disqus-sso.svg)](https://travis-ci.org/gggordon/laravel-disqus-sso)
 
 # Laravel Disqus SSO
 
