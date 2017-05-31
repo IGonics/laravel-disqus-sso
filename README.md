@@ -8,7 +8,7 @@ A simple Laravel packages used to generate payload for the Disqus SSO feature.
 
 - Install the package via composer:
 
-`composer require igonics/disqus-sso`
+`composer require igonics/laravel-disqus-sso`
 
 - Add the service provider to `app/config/app.php`:
 
